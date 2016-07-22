@@ -56,7 +56,9 @@ int main(int argc, char *argv[]) {
 
     // build the struct
     serv_addr.sin_family = AF_INET;
-    serv_addr.sing_addr.s_addr = server->h_addr;
+    bcopy((char *)server->h_addr,
+          (char *)&serv_addr.sin_addr.s_addr,
+          server->h_length);
     serv_addr.sin_port = htons(portno);
 
     // Attempt to bind socket with port
