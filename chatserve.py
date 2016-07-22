@@ -9,8 +9,8 @@ print('Socket created')
 # Bind the socket to port
 HOST = socket.gethostbyname(sock)
 PORT = 25555
-print('HOST: ',HOST)
-print('PORT: ',POST)
+print('HOST: ', HOST)
+print('PORT: ', POST)
 try:
     sock.bind((HOST, PORT))
 except socket.error as msg:
