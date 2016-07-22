@@ -21,7 +21,7 @@ sock.listen(5)
 
 while True:
     # Wait for a connection
-    print('Socket now listening on port ' + PORT)
+    print('Socket now listening on port ', PORT)
     connection, client_address = sock.accept()
 
     try:
