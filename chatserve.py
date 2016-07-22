@@ -8,7 +8,7 @@ print('Socket created')
 
 # Bind the socket to port
 HOST = 'localhost'
-PORT = 25555
+PORT = 25712
 try:
     sock.bind((HOST, PORT))
 except socket.error as msg:
@@ -21,7 +21,7 @@ sock.listen(5)
 
 while True:
     # Wait for a connection
-    print('Socket now listening')
+    print('Socket now listening on port ' + PORT)
     connection, client_address = sock.accept()
 
     try:
