@@ -7,7 +7,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print('Socket created')
 
 # Bind the socket to port
-HOST = socket.gethostbyname(sock)
+HOST = ''
 PORT = 25555
 print('HOST: ', HOST)
 print('PORT: ', POST)
