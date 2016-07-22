@@ -27,9 +27,9 @@ void error(const char *msg)
 
 int main(int argc, char *argv[]) {
 
-    int sockfd, portno;
+    int sockfd, portno, n;
     struct sockaddr_in serv_addr;
-    struct hostend *server;
+    struct hostent *server;
 
     // check that we have the right amount of arguments
     char buffer[BUFFER_SIZE];
@@ -67,7 +67,6 @@ int main(int argc, char *argv[]) {
     }
 
     // get message from the user
-    int n;
     printf("Enter the message:  ");
     bzero(buffer, BUFFER_SIZE);
     fgets(buffer, BUFFER_SIZE-1, stdin);
