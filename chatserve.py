@@ -7,7 +7,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print('Socket created')
 
 # Bind the socket to port
-HOST = 'localhost'
+HOST = ''
 PORT = 21347
 try:
     sock.bind((HOST, PORT))
@@ -41,4 +41,4 @@ while True:
     finally:
         # Clean up the connection
         connection.close()
-sock.close()
+        sock.close()
