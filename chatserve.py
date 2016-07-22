@@ -8,7 +8,7 @@ print('Socket created')
 
 # Bind the socket to port
 HOST = 'localhost'
-PORT = 25712
+PORT = 21347
 try:
     sock.bind((HOST, PORT))
 except socket.error as msg:
@@ -21,11 +21,11 @@ sock.listen(5)
 
 while True:
     # Wait for a connection
-    print('Socket now listening on port ', PORT)
+    print('Socket now listening')
     connection, client_address = sock.accept()
 
     try:
-        print('connection from' ,client_address)
+        print('connection from', client_address)
 
         # Receive the data in small chunks and retransmit it
         while True:
@@ -35,10 +35,10 @@ while True:
                 print('sending data back to the client')
                 connection.sendall(data)
             else:
-                print('no more data from' + client_address)
+                print('no more data from', client_address)
                 break
 
     finally:
         # Clean up the connection
         connection.close()
-        sock.close()
+sock.close()
