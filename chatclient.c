@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     // setup server
     server = gethostbyname(argv[1]);
     if (server == NULL) {
-        error("ERROR: no such host\n");
+        error("ERROR: no such host");
     }
 
     // clear memory and get port number
@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
 
     // Attempt to bind socket with port
     if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0){
-        error("ERROR: on binding\n");
+        error("ERROR: on binding");
     }
 
     // get message from the user
