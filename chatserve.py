@@ -4,18 +4,24 @@ import sys
 
 # Create a TCP/IP Socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print('Socket created')
 
 # Bind the socket to port
-server_address = ('localhost', 25252)
-print('starting up on %s port %s' % server_address)
-sock.bind(server_address)
+HOST = 'localhost'
+PORT = 25555
+try:
+    sock.bind((HOST, PORT))
+except socket.error as msg:
+    print('Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+    sys.exit()
+print('Socket bind complete')
 
-# Listen for incoming connections
-sock.listen(1)
+# Listen for up to 5 incoming connections
+sock.listen(5)
 
 while True:
     # Wait for a connection
-    print('waiting for a connection')
+    print('Socket now listening')
     connection, client_address = sock.accept()
 
     try:
@@ -35,3 +41,4 @@ while True:
     finally:
         # Clean up the connection
         connection.close()
+sock.close()
