@@ -7,8 +7,10 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print('Socket created')
 
 # Bind the socket to port
-HOST = ''
-PORT = 21347
+HOST = socket.gethostbyname(sock)
+PORT = 25555
+print('HOST: ',HOST)
+print('PORT: ',POST)
 try:
     sock.bind((HOST, PORT))
 except socket.error as msg:
