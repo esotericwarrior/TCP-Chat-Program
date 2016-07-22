@@ -10,7 +10,7 @@ print('Socket created')
 HOST = ''
 PORT = 25555
 print('HOST: ', HOST)
-print('PORT: ', POST)
+print('PORT: ', PORT)
 try:
     sock.bind((HOST, PORT))
 except socket.error as msg:
