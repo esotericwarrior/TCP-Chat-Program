@@ -4,11 +4,13 @@ import sys
 
 # Create a TCP/IP Socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Allow sockets to be reused if not closed properly
+# sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 print('Socket created')
 
 # Bind the socket to port
-HOST = ''
-PORT = 25555
+HOST = socket.gethostname()
+PORT = 25552
 print('HOST: ', HOST)
 print('PORT: ', PORT)
 try:
@@ -43,4 +45,3 @@ while True:
     finally:
         # Clean up the connection
         connection.close()
-        sock.close()
