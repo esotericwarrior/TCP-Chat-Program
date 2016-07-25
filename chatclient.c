@@ -167,13 +167,10 @@ int readMessage(int socketfd) {
 }
 
 int main(int argc, char *argv[]) {
-
-    int n;
     int portno;
     struct hostent *server;
 
     // check that we have the right amount of arguments
-    char buffer[BUFFER_SIZE];
     if (argc < 3) {
         fprintf(stderr,"USAGE %s hostname port\n", argv[0]);
         exit(0);
